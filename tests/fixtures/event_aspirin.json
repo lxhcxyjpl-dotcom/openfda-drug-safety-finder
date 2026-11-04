@@ -1,0 +1,45 @@
+{
+  "safetyreportid": "10003304",
+  "receivedate": "20140312",
+  "serious": "1",
+  "seriousnessdeath": "1",
+  "seriousnesshospitalization": "2",
+  "seriousnesslifethreatening": "1",
+  "sender": { "senderorganization": "FDA-Public Use" },
+  "patient": {
+    "patientsex": "2",
+    "patientonsetage": "65",
+    "patientonsetageunit": "801",
+    "reaction": [
+      { "reactionmeddrapt": "Nausea" },
+      { "reactionmeddrapt": "Nausea" },
+      { "reactionmeddrapt": "Headache" },
+      { "reactionmeddraversionpt": "17.0" }
+    ],
+    "drug": [
+      {
+        "drugcharacterization": "2",
+        "medicinalproduct": "ACETAMINOPHEN",
+        "drugindication": "Pain",
+        "openfda": {
+          "brand_name": ["TYLENOL"],
+          "generic_name": ["ACETAMINOPHEN"],
+          "manufacturer_name": ["Example Pharma"],
+          "rxcui": ["198440"]
+        }
+      },
+      {
+        "drugcharacterization": "1",
+        "medicinalproduct": "ASPIRIN 81 MG",
+        "drugindication": "Pain",
+        "openfda": {
+          "brand_name": ["ASPIRIN"],
+          "generic_name": ["ASPIRIN"],
+          "substance_name": ["ASPIRIN"],
+          "manufacturer_name": ["Example Pharma"],
+          "rxcui": ["243670"]
+        }
+      }
+    ]
+  }
+}

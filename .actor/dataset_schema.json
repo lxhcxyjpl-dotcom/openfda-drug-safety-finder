@@ -1,0 +1,170 @@
+{
+    "$schema": "https://apify.com/schemas/v1/dataset.ide.json",
+    "actorSpecification": 1,
+    "fields": {
+        "type": "object",
+        "properties": {
+            "mode": { "type": "string" },
+            "source": { "type": "string" },
+            "safetyreportid": { "type": "string" },
+            "receivedate": { "type": "string" },
+            "serious": { "type": "boolean" },
+            "seriousnessdeath": { "type": "boolean" },
+            "seriousnesshospitalization": { "type": "boolean" },
+            "seriousnesslifethreatening": { "type": "boolean" },
+            "seriousnessdisabling": { "type": "boolean" },
+            "seriousnesscongenitalanomali": { "type": "boolean" },
+            "seriousnessother": { "type": "boolean" },
+            "patientSex": { "type": "string" },
+            "patientAge": { "type": "string" },
+            "reactions": { "type": "array", "items": { "type": "string" } },
+            "drugs": { "type": "array", "items": { "type": "string" } },
+            "indications": { "type": "array", "items": { "type": "string" } },
+            "manufacturer": { "type": "string" },
+            "brand_name": { "type": "array", "items": { "type": "string" } },
+            "generic_name": { "type": "array", "items": { "type": "string" } },
+            "substance_name": { "type": "array", "items": { "type": "string" } },
+            "rxcui": { "type": "array", "items": { "type": "string" } },
+            "reportUrl": { "type": "string" },
+            "set_id": { "type": "string" },
+            "id": { "type": "string" },
+            "manufacturer_name": { "type": "array", "items": { "type": "string" } },
+            "product_ndc": { "type": "array", "items": { "type": "string" } },
+            "package_ndc": { "type": "array", "items": { "type": "string" } },
+            "spl_id": { "type": "array", "items": { "type": "string" } },
+            "unii": { "type": "array", "items": { "type": "string" } },
+            "application_number": { "type": "array", "items": { "type": "string" } },
+            "indications_and_usage": { "type": "string" },
+            "warnings": { "type": "string" },
+            "dosage_and_administration": { "type": "string" },
+            "adverse_reactions": { "type": "string" },
+            "effective_time": { "type": "string" },
+            "spl_url": { "type": "string" },
+            "recall_number": { "type": "string" },
+            "status": { "type": "string" },
+            "classification": { "type": "string" },
+            "product_description": { "type": "string" },
+            "reason_for_recall": { "type": "string" },
+            "recalling_firm": { "type": "string" },
+            "report_date": { "type": "string" },
+            "distribution_pattern": { "type": "string" },
+            "product_quantity": { "type": "string" },
+            "code_info": { "type": "string" }
+        }
+    },
+    "views": {
+        "events": {
+            "title": "Adverse events",
+            "description": "One FAERS report per row. A report does not prove the drug caused the reaction.",
+            "transformation": {
+                "fields": [
+                    "mode",
+                    "safetyreportid",
+                    "receivedate",
+                    "serious",
+                    "seriousnessdeath",
+                    "seriousnesshospitalization",
+                    "patientSex",
+                    "patientAge",
+                    "reactions",
+                    "drugs",
+                    "indications",
+                    "manufacturer",
+                    "brand_name",
+                    "generic_name",
+                    "rxcui",
+                    "reportUrl"
+                ]
+            },
+            "display": {
+                "component": "table",
+                "properties": {
+                    "mode": { "label": "Mode", "format": "text" },
+                    "safetyreportid": { "label": "Report ID", "format": "text" },
+                    "receivedate": { "label": "Received", "format": "text" },
+                    "serious": { "label": "Serious", "format": "boolean" },
+                    "seriousnessdeath": { "label": "Death", "format": "boolean" },
+                    "seriousnesshospitalization": { "label": "Hospitalization", "format": "boolean" },
+                    "patientSex": { "label": "Patient sex", "format": "text" },
+                    "patientAge": { "label": "Patient age", "format": "text" },
+                    "reactions": { "label": "Reactions", "format": "array" },
+                    "drugs": { "label": "Drugs", "format": "array" },
+                    "indications": { "label": "Indications", "format": "array" },
+                    "manufacturer": { "label": "Manufacturer", "format": "text" },
+                    "brand_name": { "label": "Brand", "format": "array" },
+                    "generic_name": { "label": "Generic", "format": "array" },
+                    "rxcui": { "label": "RxCUI", "format": "array" },
+                    "reportUrl": { "label": "Report", "format": "link" }
+                }
+            }
+        },
+        "labels": {
+            "title": "Drug labels",
+            "description": "One Structured Product Label per row. Long text fields are truncated.",
+            "transformation": {
+                "fields": [
+                    "mode",
+                    "set_id",
+                    "brand_name",
+                    "generic_name",
+                    "manufacturer_name",
+                    "effective_time",
+                    "indications_and_usage",
+                    "warnings",
+                    "adverse_reactions",
+                    "spl_url"
+                ]
+            },
+            "display": {
+                "component": "table",
+                "properties": {
+                    "mode": { "label": "Mode", "format": "text" },
+                    "set_id": { "label": "Set ID", "format": "text" },
+                    "brand_name": { "label": "Brand", "format": "array" },
+                    "generic_name": { "label": "Generic", "format": "array" },
+                    "manufacturer_name": { "label": "Manufacturer", "format": "array" },
+                    "effective_time": { "label": "Effective", "format": "text" },
+                    "indications_and_usage": { "label": "Indications", "format": "text" },
+                    "warnings": { "label": "Warnings", "format": "text" },
+                    "adverse_reactions": { "label": "Adverse reactions", "format": "text" },
+                    "spl_url": { "label": "SPL", "format": "link" }
+                }
+            }
+        },
+        "recalls": {
+            "title": "Recalls",
+            "description": "One drug enforcement report per row.",
+            "transformation": {
+                "fields": [
+                    "mode",
+                    "recall_number",
+                    "status",
+                    "classification",
+                    "recalling_firm",
+                    "report_date",
+                    "product_description",
+                    "reason_for_recall",
+                    "distribution_pattern",
+                    "brand_name",
+                    "generic_name"
+                ]
+            },
+            "display": {
+                "component": "table",
+                "properties": {
+                    "mode": { "label": "Mode", "format": "text" },
+                    "recall_number": { "label": "Recall number", "format": "text" },
+                    "status": { "label": "Status", "format": "text" },
+                    "classification": { "label": "Class", "format": "text" },
+                    "recalling_firm": { "label": "Recalling firm", "format": "text" },
+                    "report_date": { "label": "Report date", "format": "text" },
+                    "product_description": { "label": "Product", "format": "text" },
+                    "reason_for_recall": { "label": "Reason", "format": "text" },
+                    "distribution_pattern": { "label": "Distribution", "format": "text" },
+                    "brand_name": { "label": "Brand", "format": "array" },
+                    "generic_name": { "label": "Generic", "format": "array" }
+                }
+            }
+        }
+    }
+}
