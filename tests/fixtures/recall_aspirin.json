@@ -1,0 +1,19 @@
+{
+  "recall_number": "D-0170-2024",
+  "status": "Terminated",
+  "classification": "Class II",
+  "product_description": "Low Dose ASPIRIN, 81 mg, enteric coated tablets.",
+  "reason_for_recall": "Products were stored outside labeled conditions.",
+  "recalling_firm": "EXAMPLE DISTRIBUTION",
+  "report_date": "20240103",
+  "distribution_pattern": "Nationwide in the United States",
+  "product_quantity": "2 units",
+  "code_info": "Batch P126201",
+  "city": "Example City",
+  "openfda": {
+    "brand_name": ["ASPIRIN"],
+    "generic_name": ["ASPIRIN"],
+    "substance_name": ["ASPIRIN"],
+    "manufacturer_name": ["Example Laboratories"]
+  }
+}

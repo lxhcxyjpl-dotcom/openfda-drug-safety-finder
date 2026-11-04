@@ -1,0 +1,28 @@
+{
+    "actorKeyValueStoreSchemaVersion": 1,
+    "title": "OpenFDA Drug Safety Finder key-value store",
+    "description": "Run overview written alongside the dataset. The openFDA API key is never stored.",
+    "collections": {
+        "overview": {
+            "title": "Run overview",
+            "description": "How many rows were saved, the effective search, and the openFDA total. Event runs include the FAERS disclaimer.",
+            "key": "OUTPUT",
+            "contentTypes": ["application/json"],
+            "jsonSchema": {
+                "type": "object",
+                "properties": {
+                    "resultCount": { "type": "integer" },
+                    "totalMatches": { "type": "integer" },
+                    "pages": { "type": "integer" },
+                    "source": { "type": "string" },
+                    "mode": { "type": "string" },
+                    "endpoint": { "type": "string" },
+                    "search": { "type": "string" },
+                    "skip": { "type": "integer" },
+                    "maxResults": { "type": "integer" },
+                    "disclaimer": { "type": "string" }
+                }
+            }
+        }
+    }
+}

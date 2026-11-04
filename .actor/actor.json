@@ -1,0 +1,20 @@
+{
+    "$schema": "https://apify.com/schemas/v1/actor.ide.json",
+    "actorSpecification": 1,
+    "name": "openfda-drug-safety-finder",
+    "title": "OpenFDA Drug Safety Finder",
+    "description": "Search official openFDA APIs for FAERS adverse events, drug labels, and drug recalls, and save one flat row per record. No FDA website scraping and no login.",
+    "version": "0.1",
+    "buildTag": "latest",
+    "meta": {
+        "templateId": "python-empty",
+        "generatedBy": "Cursor with Grok 4.7"
+    },
+    "inputSchema": "./input_schema.json",
+    "outputSchema": "./output_schema.json",
+    "storages": {
+        "dataset": "./dataset_schema.json",
+        "keyValueStore": "./key_value_store_schema.json"
+    },
+    "dockerfile": "../Dockerfile"
+}

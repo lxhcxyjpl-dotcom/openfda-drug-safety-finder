@@ -1,0 +1,67 @@
+{
+    "$schema": "https://apify.com/schemas/v1/input.ide.json",
+    "title": "OpenFDA Drug Safety Finder input",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "search": {
+            "title": "Search",
+            "type": "string",
+            "description": "A plain drug, brand, or ingredient name, or an openFDA search expression. A plain value such as aspirin is quoted and OR-ed across the name fields for the selected mode (medicinal product, brand, generic, and substance; recalls also search product description). A value that already contains field:term syntax, such as patient.drug.medicinalproduct:aspirin or openfda.brand_name:\"tylenol extra strength\", is sent to openFDA unchanged. Required unless you set a brand, generic, or substance name. Do not put an API key here.",
+            "editor": "textarea",
+            "prefill": "aspirin"
+        },
+        "mode": {
+            "title": "Mode",
+            "type": "string",
+            "description": "Which official openFDA dataset to query. event reads FAERS adverse event reports (/drug/event.json). label reads Structured Product Labeling (/drug/label.json). recall reads drug enforcement reports (/drug/enforcement.json).",
+            "enum": ["event", "label", "recall"],
+            "enumTitles": ["Adverse events (FAERS)", "Drug labels (SPL)", "Recalls (enforcement)"],
+            "default": "event"
+        },
+        "brandName": {
+            "title": "Brand name",
+            "type": "string",
+            "description": "Optional brand name. Used only when Search is empty. OR-ed with generic name and substance name. Example: Tylenol.",
+            "editor": "textfield"
+        },
+        "genericName": {
+            "title": "Generic name",
+            "type": "string",
+            "description": "Optional generic name. Used only when Search is empty. Example: acetaminophen.",
+            "editor": "textfield"
+        },
+        "substanceName": {
+            "title": "Substance name",
+            "type": "string",
+            "description": "Optional active substance. Used only when Search is empty. Example: ibuprofen.",
+            "editor": "textfield"
+        },
+        "maxResults": {
+            "title": "Maximum results",
+            "type": "integer",
+            "description": "Maximum number of flat rows to save. openFDA chooses the order after the Actor sorts by the dataset date, newest first.",
+            "default": 50,
+            "minimum": 1,
+            "maximum": 500
+        },
+        "apiKey": {
+            "title": "openFDA API key",
+            "type": "string",
+            "description": "Optional free openFDA API key. Without a key the public limit is 240 requests per minute and 1,000 requests per day per IP. With a key the daily limit is 120,000 requests. The key is sent only as the api_key query parameter to api.fda.gov and is never written to the dataset, the run overview, or the logs. Create one at https://open.fda.gov/apis/authentication/.",
+            "editor": "textfield",
+            "isSecret": true
+        },
+        "skip": {
+            "title": "Skip",
+            "type": "integer",
+            "description": "How many matching openFDA records to skip before saving. Use this to resume a larger result set. openFDA allows skip up to 25000. Leave at 0 for a normal run.",
+            "default": 0,
+            "minimum": 0,
+            "maximum": 25000,
+            "sectionCaption": "Advanced",
+            "sectionDescription": "Pagination resume. Most runs can leave skip at 0."
+        }
+    },
+    "required": ["mode"]
+}

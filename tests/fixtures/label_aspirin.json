@@ -1,0 +1,22 @@
+{
+  "set_id": "0058175f-3474-40c3-a046-6cfaec86d84b",
+  "id": "008ee85b-5cac-45a6-a857-a828f8125175",
+  "effective_time": "20240416",
+  "version": "3",
+  "indications_and_usage": ["Temporarily relieves minor aches and pains."],
+  "warnings": ["Reye's syndrome warning. Allergy alert."],
+  "dosage_and_administration": ["Adults: 1 to 2 tablets every 4 hours."],
+  "openfda": {
+    "brand_name": ["ASPIRIN", "ASPIRIN"],
+    "generic_name": ["ASPIRIN"],
+    "manufacturer_name": ["Example Labeler"],
+    "product_ndc": ["0536-1234"],
+    "package_ndc": ["0536-1234-01"],
+    "rxcui": ["243670"],
+    "spl_id": ["spl-example"],
+    "unii": ["R16CO5Y76E"],
+    "substance_name": ["ASPIRIN"],
+    "application_number": ["M013"],
+    "product_type": ["HUMAN OTC DRUG"]
+  }
+}

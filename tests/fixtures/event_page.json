@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care.",
+    "results": { "skip": 0, "limit": 1, "total": 3 }
+  },
+  "results": [
+    {
+      "safetyreportid": "10003304",
+      "receivedate": "20140312",
+      "serious": "2",
+      "patient": {
+        "patientsex": "1",
+        "reaction": [{ "reactionmeddrapt": "Rash" }],
+        "drug": [{ "medicinalproduct": "ASPIRIN", "drugcharacterization": "1" }]
+      }
+    }
+  ]
+}
